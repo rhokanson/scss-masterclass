@@ -4,13 +4,16 @@ import sass from "gulp-sass";
 import minify from "gulp-csso";
 import autoprefixer from "gulp-autoprefixer";
 
-sass.compiler = require("node-sass");
+import gulpSass from "gulp-sass";
+import sass1 from "sass";
+
+const sass = gulpSass(sass1);
 
 const routes = {
   css: {
     watch: "src/scss/*",
     src: "src/scss/styles.scss",
-    dest: "dist/css"
+    dist: "dist/css"
   }
 };
 
